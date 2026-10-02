@@ -1,16 +1,22 @@
-## Hi there 👋
+# Hi, I'm snowstorm ❄️
 
-<!--
-**snowstorm-121/snowstorm-121** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+<img align="right" width="48%" src="./profile/stats.svg" alt="snowstorm's GitHub statistics" />
 
-Here are some ideas to get you started:
+*Slow growth still finds the light.*
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+- 🎓 **Artificial Intelligence & Automation · HUST**
+- 🌱 Learning **PyTorch, LLMs, and RAG**
+- 🔎 Building [**Traceable RAG**](https://github.com/snowstorm-121/traceable-rag), a local retrieval prototype
+- 🧠 Recording my [**PyTorch learning journey**](https://github.com/snowstorm-121/pytorch_learning)
+- 📍 Based in **Wuhan, China**
+- ✍️ Writing about [**learning and life**](https://snowstorm-121.github.io/)
+
+<br clear="both" />
+
+<div align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/snowstorm-121/snowstorm-121/main/profile/github-snake-dark.svg" />
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/snowstorm-121/snowstorm-121/main/profile/github-snake.svg" />
+    <img width="100%" alt="A snake eating snowstorm-121's GitHub contributions" src="https://raw.githubusercontent.com/snowstorm-121/snowstorm-121/main/profile/github-snake.svg" />
+  </picture>
+</div>
