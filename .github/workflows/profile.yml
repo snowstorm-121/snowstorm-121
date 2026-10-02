@@ -1,0 +1,66 @@
+name: Update profile artwork
+
+'on':
+  schedule:
+    - cron: '23 1 * * *'
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - README.md
+      - .github/workflows/profile.yml
+
+concurrency:
+  group: profile-artwork
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  artwork:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v6
+
+      - name: Generate statistics card
+        uses: stats-organization/github-readme-stats-action@v2
+        with:
+          card: stats
+          options: username=${{ github.repository_owner }}&show_icons=true&theme=tokyonight&custom_title=My%20GitHub%20Statistics
+          path: profile/stats.svg
+          token: ${{ secrets.GITHUB_TOKEN }}
+          fail_on_error: 'true'
+
+      - name: Generate contribution snake
+        uses: Platane/snk/svg-only@v3
+        with:
+          github_user_name: ${{ github.repository_owner }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          outputs: |
+            profile/github-snake.svg
+            profile/github-snake-dark.svg?palette=github-dark
+      - name: Verify generated artwork
+        run: |
+          python3 - <<'PY'
+          import xml.etree.ElementTree as ET
+          from pathlib import Path
+          for filename in ('stats.svg', 'github-snake.svg', 'github-snake-dark.svg'):
+              path = Path('profile') / filename
+              assert path.stat().st_size > 100, f'Empty artwork: {path}'
+              assert ET.parse(path).getroot().tag == '{http://www.w3.org/2000/svg}svg', path
+          PY
+
+      - name: Commit updated artwork
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add profile/stats.svg profile/github-snake.svg profile/github-snake-dark.svg
+          if git diff --cached --quiet; then
+            exit 0
+          fi
+          git commit -m 'chore: update profile artwork'
+          git push
