@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="180" viewBox="0 0 960 180" role="img" aria-labelledby="title desc">
+  <title id="title">snowstorm</title>
+  <desc id="desc">A minimal terminal window. Small experiments, steady progress.</desc>
+  <rect x="0.5" y="0.5" width="959" height="179" rx="10" fill="#f6f8fa" stroke="#d1d9e0"/>
+  <path d="M1 36H959" stroke="#d1d9e0"/>
+  <g fill="#b7c0ca"><circle cx="22" cy="18" r="3"/><circle cx="35" cy="18" r="3"/><circle cx="48" cy="18" r="3"/></g>
+  <g font-family="Menlo,Consolas,'DejaVu Sans Mono',monospace">
+    <text x="70" y="23" fill="#59636e" font-size="12">snowstorm@github: ~</text>
+    <text x="929" y="23" text-anchor="end" fill="#59636e" font-size="11">profile</text>
+    <text x="31" y="108" fill="#07856b" font-size="40">&gt;</text>
+    <text x="75" y="109" fill="#1f2328" font-size="48" font-weight="600" letter-spacing="-1.5">snowstorm</text>
+    <rect x="348" y="108" width="23" height="4" rx="1" fill="#07856b"/>
+    <text x="76" y="144" fill="#59636e" font-size="16">small experiments. steady progress.</text>
+  </g>
+</svg>
